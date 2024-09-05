@@ -29,6 +29,7 @@ body {
   min-height: 100%;
   line-height: 1.33;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -87,6 +88,21 @@ header h1 img {
   }
 }
 
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+@media only screen and (max-width: 580px) {
+  .links {
+    width: 100%;
+  }
+}
+.links a {
+  width: 100%;
+}
+
 button {
   border: none;
   margin: 0;
@@ -109,6 +125,8 @@ button::-moz-focus-inner {
 }
 
 button.button-cta {
+  display: block;
+  width: 100%;
   border: black 1px solid;
   text-transform: uppercase;
   cursor: pointer;
@@ -126,11 +144,21 @@ button.button-cta {
   }
 }
 button.button-cta:hover {
-  background: black;
-  color: white;
+  border-color: #616161;
+  color: #616161;
 }
 button.button-cta:active {
   text-shadow: 0 1px white;
+}
+
+button.button-cta-primary {
+  background: black;
+  color: white;
+}
+button.button-cta-primary:hover {
+  background: #616161;
+  border: 1px solid #616161;
+  color: white;
 }
 
 main {
@@ -155,11 +183,21 @@ section.info {
   }
 }
 section.info a:hover {
-  text-decoration: underline;
+  color: #616161;
 }
 
 span.no-break {
   white-space: nowrap;
+}
+
+.pdf-container {
+  display: none;
+  aspect-ratio: 4/3;
+  width: 100vw;
+  height: 76vw;
+}
+.pdf-container.show {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

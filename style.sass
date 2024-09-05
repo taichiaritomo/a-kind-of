@@ -5,7 +5,8 @@
 $spacing-S: 48px
 $spacing-XS: 19px
 $breakpoint: 580px
-$breakpoint-S: $breakpoint / 2
+$grey: #616161
+// $breakpoint-S: $breakpoint / 
 
 *
     box-sizing: border-box
@@ -32,6 +33,7 @@ body
   min-height: 100%
   line-height: 1.33
   display: flex
+  flex-direction: column
   justify-content: center
   align-items: center
 .container
@@ -76,27 +78,39 @@ header
       text-decoration: none
 
 
+.links
+  display: flex
+  flex-direction: column
+  align-items: stretch
+  gap: 12px
+  @media only screen and (max-width: $breakpoint)
+    width: 100%
+  a
+    width: 100%
+
 // button reset
 button
-    border: none
-    margin: 0
+  border: none
+  margin: 0
+  padding: 0
+  width: auto
+  overflow: visible
+  text-align: inherit
+  outline: none
+  background: transparent
+  color: inherit
+  font: inherit
+  line-height: normal
+  -webkit-font-smoothing: inherit
+  -moz-osx-font-smoothing: inherit
+  -webkit-appearance: none
+  &::-moz-focus-inner
+    border: 0
     padding: 0
-    width: auto
-    overflow: visible
-    text-align: inherit
-    outline: none
-    background: transparent
-    color: inherit
-    font: inherit
-    line-height: normal
-    -webkit-font-smoothing: inherit
-    -moz-osx-font-smoothing: inherit
-    -webkit-appearance: none
-    &::-moz-focus-inner
-        border: 0
-        padding: 0
   
 button.button-cta
+  display: block
+  width: 100%
   border: black 1px solid
   text-transform: uppercase
   cursor: pointer
@@ -110,10 +124,18 @@ button.button-cta
     padding: 20px 0
     width: 100%
   &:hover
-    background: black
-    color: white
+    border-color: $grey
+    color: $grey
   &:active
     text-shadow: 0 1px white
+
+button.button-cta-primary
+  background: black
+  color: white
+  &:hover
+    background: $grey
+    border: 1px solid $grey
+    color: white
 
 main
   width: 100%
@@ -132,7 +154,16 @@ section.info
     flex-direction: column
     align-items: flex-start
   a:hover
-    text-decoration: underline
+    // text-decoration: underline
+    color: #616161
 
 span.no-break
   white-space: nowrap
+
+.pdf-container
+  display: none
+  aspect-ratio: 4 / 3
+  width: 100vw
+  height: 76vw
+  &.show
+    display: block
