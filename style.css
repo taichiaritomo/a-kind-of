@@ -200,5 +200,13 @@ span.no-break {
 .pdf-container.show {
   display: block;
 }
+.pdf-container #price-chart {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
 
 /*# sourceMappingURL=style.css.map */
